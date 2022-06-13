@@ -10,12 +10,12 @@
 
     &.layout_sidebar {
         justify-content: space-between;
-        max-width: $container-width;
+        // max-width: $container-width;
         margin: 0 auto;
 
         .col_1 {
             flex: 1;
-            max-width: 800px;
+            max-width: 62em;
         }
 
         .col_2 {
@@ -43,9 +43,9 @@
     }
 
     &.layout_two_columns {
-        max-width: $container-width;
+        // max-width: $container-width;
         margin: 0 auto;
-        
+
         @media (max-width: 768px) {
             &.layout_two_columns_right_first {
                 order: -1;
@@ -90,5 +90,4 @@
     & + & {
         margin-top: 3em;
     }
-
 }

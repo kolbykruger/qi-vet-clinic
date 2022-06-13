@@ -23,8 +23,8 @@
             overflow: hidden;
 
             a {
-                @include fs(13px);
-                padding: 10px;
+                @include fs(16px);
+                padding: 1em 1.25em;
                 margin: 0;
 
                 &:hover,
@@ -41,7 +41,11 @@
         align-items: center;
 
         > li {
-            margin: 0 0 0 32px;
+            margin: 0 0 0 3em;
+
+            @media(max-width: 1400px) {
+                margin: 0 0 0 1.5em;
+            }
         }
 
         li:last-child ul {
@@ -69,12 +73,15 @@
         }
     }
 
-    a {
-        @include fs(16px);
+    a:not(.button) {
         display: block;
         color: $color-0;
         text-decoration: none;
         transition: $transition-1;
+
+        @media(max-width: 1400px) {
+            @include fs(17px);
+        }
 
         &:hover,
         &:focus {
@@ -82,13 +89,18 @@
         }
 
         i {
-            @include fs(12px);
+            @include fs(14px);
             cursor: pointer;
             margin: 0 0 0 6px;
         }
     }
 
-    @media (max-width: 900px) {
+    a {
+        @include fs(20px);
+        font-weight: 600;
+    }
+
+    @media (max-width: 968px) {
         display: none;
     }
 }

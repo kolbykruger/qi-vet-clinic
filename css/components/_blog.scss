@@ -1,33 +1,83 @@
 .blog {
     margin: 0 auto;
+    overflow: hidden;
+
+    .flickity-viewport {
+        width: 100%;
+    }
+
+    .flickity-page-dots {
+        .dot:only-child {
+            display: none;
+        }
+    }
+
+    .flickity {
+
+        &-button {
+            background: none;
+            color: $color-1;
+            z-index: 2;
+
+            @media (max-width: 600px) {
+                top: 100%;
+            }
+
+            svg path {
+                stroke-width: 3px;
+                stroke: rgba(255,255,255,0.25);
+            }
+
+            &[disabled] {
+                display: none;
+            }
+        }
+    }
 
     &.blog-layout {
 
         .post {
 
-            &:first-of-type {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+        }
+    }
 
-                .summary {
-                    display: block;
-                }
+    &.blog-widget {
+        padding-top: 6vh;
 
-                & > * {
-                    width: 50%;
-                }
+        .post {
+            width: calc(30% - 2em);
 
-                .cover {
-                    order: 1;
-                }
+            @media (max-width: 968px) {
+                width: calc(31% - 2em);
+            }
+            @media (max-width: 768px) {
+                width: calc(80% - 2em);
+            }
+        }
 
-                .info {
-                    padding: 2em;
-                    text-align: left;
+        .group {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 9%;
+                background: rgba($color-3, 0.5);
+                background: linear-gradient(to right, rgba(#EFF1DF, 0), rgba(#EFF1DF, 1));
+                user-select: none;
+                pointer-events: none;
+
+                @media (max-width: 768px) {
+                    width: 22%;
                 }
             }
+        }
+
+        .container > .group {
+            margin: 0;
         }
     }
 
@@ -35,6 +85,10 @@
 
         & > .group {
             margin: 0 -1em;
+
+            @media (max-width: 1400px) {
+                margin: 0;
+            }
         }
 
     }
@@ -47,29 +101,53 @@
     a {
         text-decoration: none;
         color: inherit;
+
+        &:hover,
+        &:focus {
+
+        }
     }
 
     .post {
-        width: calc(33.333% - 2em);
+        width: calc(25% - 2em);
         margin: 1em;
-        border-radius: 0.25em;
         overflow: hidden;
-        background: #fff;
-        transition: $transition-1;
 
-        &:hover,
-        &:focus{
-            box-shadow: $box-shadow-2;
+        &.post-view-more {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
     }
 
     .cover {
+        position: relative;
         margin: 0 auto;
         overflow: hidden;
+        background: $color-0;
+
+        a:hover,
+        a:focus {
+            img {
+                transform: scale(1.08)
+            }
+        }
+
+        .image {
+
+        }
 
         img {
             width: 100%;
-            transition: $transition-1;
+            opacity: 0.9;
+            transition: 0.22s ease
         }
 
     }
@@ -79,23 +157,29 @@
     }
 
     .info {
-        padding: 1em;
+        padding: 1.5em 0;
     }
 
     .title {
-        @include fs(24px);
+        //@include fs(28px);
         margin: 0;
     }
 
     .summary {
-        @include fs(16px);
+        //@include fs(16px);
         padding-top: 1em;
     }
 
+
+    @media (max-width: 968px) {
+        .post {
+            width: calc(33.333% - 2em);
+        }
+    }
     @media (max-width: 768px) {
 
         .post {
-            width: calc(100% - 2em) !important;
+            width: calc(100% - 2em);
         }
 
         &.blog-layout {

@@ -40,10 +40,13 @@ $button-background: $color-1;
     display: inline-flex;
     align-items: center;
     margin: 0;
-    padding: 0.75em 1em;
+    padding: 0 1.5em;
+    height: 56px;
+    font-size: 1.125rem;
+    font-weight: 600;
     background: $button-background;
     color: $button-color;
-    border-radius: 0.25em;
+    border-radius: 0.375em 1.5em 0.375em 1.5em;
     line-height: 1;
     transition: 150ms ease;
     text-decoration: none;
@@ -75,6 +78,15 @@ $button-background: $color-1;
     }
 
     // Unique styles
+    &-secondary {
+        background: $color-2;
+
+        &:hover,
+        &:focus {
+            background: darken($color-2, 6%);
+        }
+    }
+
     &-reverse {
         background: #fff;
         color: $button-background;
@@ -87,7 +99,8 @@ $button-background: $color-1;
     &-ghost {
         background: transparent;
         color: $button-background;
-        border: 1px solid $button-background;
+        border: 2px solid $button-background;
+        font-weight: 600;
 
         &:hover,
         &:focus {
@@ -97,7 +110,37 @@ $button-background: $color-1;
             border-color: $color-2
         }
     }
-    
+
+    &-size-small {
+        font-size: 0.75rem;
+        height: 34px;
+    }
+
+    &-text {
+        background: none;
+        padding: 0;
+        box-shadow: none;
+        color: $color-1;
+        border-radius: 0;
+        height: auto;
+
+        &:hover,
+        &:focus {
+            background: none;
+            color: $color-0;
+            box-shadow: 0 2px 0 $color-1;
+        }
+    }
+
+    &-icon {
+        height: auto;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
     &[disabled] {
         background: $color-grey-1;
         color: $color-0;

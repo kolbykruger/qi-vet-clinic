@@ -1,0 +1,107 @@
+.testimonials {
+    background: #F7F8EF;
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+
+    .container {
+
+    }
+
+    .slider {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 13%;
+            background: red;
+            background: linear-gradient(to right, rgba(#F7F8EF, 0.1), rgba(#F7F8EF, 1));
+            z-index: 2;
+        }
+    }
+
+    &-item {
+        width: calc(44% - 4em);
+        margin: 2em;
+        margin-right: 2em;
+        padding-right: 4em;
+        border-right: 2px solid $color-grey-2;
+
+        &:last-of-type {
+            border-right: none;
+        }
+
+        .quotemark {
+            --size: 5rem;
+            width: var(--size);
+            height: var(--size);
+            margin-bottom: 1.5em;
+            opacity: 0.5;
+        }
+
+        .quote {
+            margin: 1.5em 0;
+        }
+
+        .quotee {
+            display: grid;
+            grid-template-columns: 75px auto;
+            margin-top: 1.5em;
+
+            &-image {
+                aspect-ratio: 1;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 1em;
+                    box-shadow: $box-shadow-2;
+                }
+            }
+
+            &-info {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                margin-left: 1em;
+                font-weight: 600;
+
+                h5 {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .flickity {
+        &-enabled {
+            // padding-bottom: 1em;
+        }
+
+        &-viewport,
+        &-slider {
+            width: 100%;
+        }
+
+        &-viewport {
+            transition: height 0.3s ease;
+        }
+
+        &-button {
+            z-index: 2;
+
+            &[disabled] {
+                opacity: 0;
+            }
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+        }
+    }
+}

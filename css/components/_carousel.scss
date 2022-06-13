@@ -1,16 +1,50 @@
 .carousel {
-    user-select: none;
+    position: relative;
+    padding-top: 2em;
+    padding-bottom: 6vh;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -100vw;
+        right: -100vw;
+        height: 100vh;
+        background: linear-gradient(to bottom, #EFF1DF, #C7D08E);
+        z-index: -1;
+    }
 
     .container {
-        padding: 0;
+
     }
 
     .group {
-
+        align-items: center;
     }
 
-    .flickity-viewport {
-        width: 100%;
+    .details,
+    .slider {
+        flex: 1;
+    }
+
+    .details {
+
+        .info {
+            max-width: 46em;
+            padding-right: 3em;
+        }
+
+        h1 {
+            max-width: 80%;
+        }
+
+        .buttons {
+            margin-top: 2em;
+        }
+    }
+
+    .slider {
+
     }
 
     .slide {
@@ -27,40 +61,87 @@
         img {
             user-select: none;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 1.25;
+        }
+    }
+
+    #carouselAction {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        --size: 3em;
+        width: var(--size);
+        height: var(--size);
+        transform: translateY(50%);
+    }
+
+    .flickity {
+        &-enabled {
+            // padding-bottom: 1em;
         }
 
-        .info {
-            position: absolute;
+        &-viewport,
+        &-slider {
             width: 100%;
-            bottom: 0;
-            left: 0;
-            color: #fff;
-            padding: 2em;
-            text-align: center;
         }
 
-        .title {
-            margin: 0;
-            @include fluid('font-size', 1.75rem, 3rem);
-            font-weight: 600;
+        &-viewport {
         }
 
-        .description {
-            @include fluid('font-size', 1rem, 1.75rem);
-            font-weight: 500;
+        &-page-dots {
+            top: 1em;
+            right: 1em;
+            left: auto;
+            bottom: auto;
+            width: auto;
+            text-align: right;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-gap: 0.25em;
+
+            .dot {
+                max-width: 10px;
+                margin: 0;
+                border-radius: 2em;
+                background: $color-0;
+                opacity: 0.75;
+                transition: $transition-1;
+
+                @media (max-width: 968px) {
+                    margin: 0 6px;
+                }
+
+                &.is-selected {
+                    max-width: 22px;
+                    background: $color-2;
+                    box-shadow: $box-shadow-1;
+                    opacity: 1;
+                }
+            }
         }
 
-        .button {
-            margin: 0.5em 0;
+        &-button {
+            &.previous {
+                left: auto;
+                right: calc(100% + 1.5em);
+            }
+
+            &.next {
+                right: auto;
+                left: calc(100% + 1.5em);
+            }
+
+            opacity: 0.25;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
         }
     }
-    @media (max-width: 900px) {
-
-    }
-
-    @media (max-width: 600px) {
-
-    }
-
 }

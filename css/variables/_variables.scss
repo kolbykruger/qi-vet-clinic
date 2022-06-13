@@ -1,21 +1,21 @@
 //Colors
-$color-0: #000;
-$color-1: #ef4538;
-$color-2: blue;
-$color-3: green;
+$color-0: #232610;
+$color-1: #7b8638;
+$color-2: #87393E;
+$color-3: #478538;
 
-$color-grey-1: #f1f2f3;
-$color-grey-2: #f8f8f8;
+$color-grey-1: #F7F8EF;
+$color-grey-2: #E7EBCE;
 $color-grey-3: #424242;
 
 //Fonts
-$font-0: "Open Sans", sans-serif;
-$font-1: "Open Sans", sans-serif;
+$font-0: "Inter", sans-serif;
+$font-1: "Inter", sans-serif;
 
 //Box Shadow
-$box-shadow-1: 0 2px 4px 0 rgba(50,50,93,.1);
-$box-shadow-2: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-$box-shadow-3: 0 7px 14px rgba(50,50,93,.11), 0 3px 6px rgba(0,0,0,.08);
+$box-shadow-1: 0 2px 4px 0 rgba($color-1,.1);
+$box-shadow-2: 0 4px 6px rgba($color-1,.11), 0 1px 3px rgba($color-1,.08);
+$box-shadow-3: 0 7px 14px rgba($color-1,.11), 0 3px 6px rgba($color-1,.08);
 
 //Transitions
 $transition-1: 250ms ease;
