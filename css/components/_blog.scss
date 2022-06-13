@@ -13,23 +13,29 @@
     }
 
     .flickity {
+        &-enabled {
+            // padding-bottom: 1em;
+        }
+
+        &-viewport,
+        &-slider {
+            width: 100%;
+        }
+
+        &-viewport {
+            transition: height 0.3s ease;
+        }
 
         &-button {
-            background: none;
-            color: $color-1;
             z-index: 2;
 
-            @media (max-width: 600px) {
-                top: 100%;
-            }
-
-            svg path {
-                stroke-width: 3px;
-                stroke: rgba(255,255,255,0.25);
-            }
-
             &[disabled] {
-                display: none;
+                opacity: 0;
+            }
+
+            &:hover,
+            &:focus {
+                opacity: 1;
             }
         }
     }

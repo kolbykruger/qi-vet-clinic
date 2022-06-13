@@ -2192,22 +2192,21 @@ p.simplesearch-results, figure:not(.fig) figcaption.simplesearch-results,
 .blog .flickity-page-dots .dot:only-child {
   display: none;
 }
+.blog .flickity-viewport, .blog .flickity-slider {
+  width: 100%;
+}
+.blog .flickity-viewport {
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+}
 .blog .flickity-button {
-  background: none;
-  color: #7b8638;
   z-index: 2;
 }
-@media (max-width: 600px) {
-  .blog .flickity-button {
-    top: 100%;
-  }
-}
-.blog .flickity-button svg path {
-  stroke-width: 3px;
-  stroke: rgba(255, 255, 255, 0.25);
-}
 .blog .flickity-button[disabled] {
-  display: none;
+  opacity: 0;
+}
+.blog .flickity-button:hover, .blog .flickity-button:focus {
+  opacity: 1;
 }
 .blog.blog-widget {
   padding-top: 6vh;
