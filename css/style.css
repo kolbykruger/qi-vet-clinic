@@ -1103,7 +1103,7 @@ hr {
   padding: 0;
 }
 .nav ul ul {
-  border-radius: 0.25em;
+  border-radius: 0.125em;
   padding: 0;
   left: 0;
   opacity: 0;
@@ -1112,6 +1112,7 @@ hr {
   background: #fff;
   white-space: nowrap;
   min-width: 200px;
+  border-top: 0.35em solid #7b8638;
   -webkit-box-shadow: 0 4px 6px rgba(123, 134, 56, 0.11), 0 1px 3px rgba(123, 134, 56, 0.08);
           box-shadow: 0 4px 6px rgba(123, 134, 56, 0.11), 0 1px 3px rgba(123, 134, 56, 0.08);
   text-align: left;
@@ -2599,6 +2600,7 @@ p.simplesearch-results, figure:not(.fig) figcaption.simplesearch-results,
 }
 .carousel .details h1 {
   max-width: 80%;
+  margin-bottom: 0.5em;
 }
 .carousel .details .buttons {
   margin-top: 2em;
@@ -3086,6 +3088,9 @@ table td {
 }
 .testimonials .flickity-button {
   z-index: 2;
+}
+.testimonials .flickity-button.previous {
+  display: none;
 }
 .testimonials .flickity-button[disabled] {
   opacity: 0;

@@ -94,6 +94,10 @@
         &-button {
             z-index: 2;
 
+            &.previous {
+                display: none
+            }
+
             &[disabled] {
                 opacity: 0;
             }
